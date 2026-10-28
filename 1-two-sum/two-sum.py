@@ -1,5 +1,5 @@
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashMap = {} #create a hashmap
 
         for i, n in enumerate(nums): #loop through the index and value
@@ -12,4 +12,5 @@ class Solution:
                                         # and current index 'i' (which is also the index of n)
             hashMap[n] = i # store the current value (n) and its index
 
-        
+
+            
