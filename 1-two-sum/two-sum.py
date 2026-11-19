@@ -1,16 +1,17 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashMap = {} #create a hashmap
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # Store previously seen numbers as keys and their indices as values.
+        hashset = {}
 
-        for i, n in enumerate(nums): #loop through the index and value
-            diff = target - n  #target = diff + n
-                                # where diff is value to be found
-                                # and n represents each value in the list
-            
-            if diff in hashMap: # if diff already in the hashmap
-                return [hashMap[diff], i] # return the value of diff found earlier
-                                        # and current index 'i' (which is also the index of n)
-            hashMap[n] = i # store the current value (n) and its index
+        # Loop through each number and its index.
+        for index, num in enumerate(nums):
+            # Calculate the number needed to reach the target.
+            diff = target - num
 
+            # Check whether that matching number has already been stored.
+            if diff in hashset:
+                # Return the matching number's index and the current index.
+                return [hashset[diff], index]
 
-            
+            # Save the current number and its index for later iterations.
+            hashset.update({num: index})
